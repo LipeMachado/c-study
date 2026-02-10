@@ -33,11 +33,11 @@ int main(){
 				break;
 			case 0:
 				cleanScreen();
-				printf("Saída do programa!\n");
+				printf("Exit!\n");
 				return 0;
 			default:
 				cleanScreen();
-				printf("Valor incorreto!");
+				printf("Value incorrect!");
 		}
 	}
 
