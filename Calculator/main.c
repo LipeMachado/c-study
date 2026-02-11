@@ -1,44 +1,39 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "arithmetics.h"
-
-void cleanScreen(){
-	#ifdef _WIN32
-        	system("cls"); // Windows
-	#else
-		system("clear"); // Linux/Unix
-	#endif
-}
+#include "UI.h"
 
 int main(){
 	printf("Hello World!\n");
 
 	int choose;
-	int num1;
-	int num2;
 	
 	while(1){
-		printf("\n1 - Sum \n2 - Minus \n0 - Exit\n");
-		printf("Choose a option:\n");
+		Menu();
 		scanf("%d", &choose);
 		
 		switch(choose){
 			case 1:
+				CleanScreen();
 				printf("First number: \n");
+				int num1;
 				scanf("%d", &num1);
+
 				printf("Secound number: \n");
+				int num2;
 				scanf("%d", &num2);
-				cleanScreen();
+				
+				CleanScreen();
 				printf("Result: %d \n", sum(num1, num2));
 				break;
 			case 0:
-				cleanScreen();
+				CleanScreen();
 				printf("Exit!\n");
 				return 0;
 			default:
-				cleanScreen();
+				CleanScreen();
 				printf("Value incorrect!");
 		}
+
 	}
 
 	return 0;

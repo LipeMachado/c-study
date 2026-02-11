@@ -1,15 +1,16 @@
-CC=gcc
-CFLAGS=-I.
+CC = gcc
+CFLAGS = -I. -Wall -Wextra -std=c99
 
-# Definição dos arquivos objetos (o que quero gerar antes do executável)
-OBJ=main.o functions.o
+# Definition of the object files (what I want to generate before the executable)
+OBJ = main.o functions.o UI.o
 
-main: $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS)
-
-# Gerar cada arquivo .o a partir de seu respectivo .c
+# Generate each .o file from its respective .c file
 %.o: %.c arithmetics.h
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -c $< $(CFLAGS)
+
+# Final executable
+main: $(OBJ)
+	$(CC) -o main $(OBJ)
 
 clean:
 	rm -rf *.o main
