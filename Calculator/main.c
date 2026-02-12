@@ -8,7 +8,7 @@ int main(){
 	int choose;
 	
 	while(1){
-		Menu();
+		DisplayMenu();
 		scanf("%d", &choose);
 		
 		switch(choose){

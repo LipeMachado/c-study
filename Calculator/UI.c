@@ -10,7 +10,7 @@ void CleanScreen(void){
 	#endif
 }
 
-void Menu(){
+void DisplayMenu(){
 	printf(
 		"\n0 - Exit"
 		"\n1 - Sum"

@@ -2,6 +2,6 @@
 #define UI_H
 
 void CleanScreen(void);
-void Menu();
+void DisplayMenu();
 
 #endif
