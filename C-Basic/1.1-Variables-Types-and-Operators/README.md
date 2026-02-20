@@ -1,6 +1,6 @@
 # 1.1 Variables, Types and Operators
 
-**Part 1 of C/SO Linux Track** – Basic concepts: int/float/char, storage, casting, operators.
+**Part 1 of C** – Basic concepts: int/float/char, storage, casting, operators.
 
 ## Tasks (3)
 | Task | Description | Status | Executable |
