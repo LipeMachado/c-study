@@ -2,12 +2,6 @@
 
 **Part 1 of C/SO Linux Track** – Basic concepts: int/float/char, storage, casting, operators.
 
-## Concepts
-- Primitive types (int, float, char)
-- Storage classes, explicit casting
-- Arithmetic, logical, bitwise operators
-- References: DIO C Basic, YouTube
-
 ## Tasks (3)
 | Task | Description | Status | Executable |
 |------|-------------|--------|------------|
