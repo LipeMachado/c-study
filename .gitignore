@@ -1,2 +1,61 @@
+# Executables (Makefile .out, gcc defaults)
+*.out
+a.out
+*.exe
+
+# Object files and deps
 *.o
-Calculator/main
+*.d
+*.ko
+*.elf
+*.obj
+
+# Core dumps/temp (Valgrind, crashes)
+core
+vgcore*
+*~
+
+# Headers pré-compilados
+*.gch
+*.pch
+
+# Libraries
+*.a
+*.lib
+*.la
+*.lo
+
+# Shared libs (se build)
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Build dirs
+build/
+Debug/
+Release/
+dist/
+
+# IDE/Editor (VSCode, Vim, etc.)
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Linux/OS X temp
+.Trash-*/
+*.nfs*
+Thumbs.db
+
+# Logs/debug
+*.log
+logs/
+
+# Binaries/kernel
+*.bin
+*.hex
+modules.order
+Module.symvers
+
