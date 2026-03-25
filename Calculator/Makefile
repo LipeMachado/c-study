@@ -1,16 +1,30 @@
-CC = gcc
-CFLAGS = -I. -Wall -Wextra -std=c99
+CC ?= gcc
+CFLAGS ?= -Wall -g -O0 -MMD
+LDLIBS ?=
 
-# Definition of the object files (what I want to generate before the executable)
-OBJ = main.o functions.o UI.o
+SOURCES := $(shell find . -name '*.c' -not -path './output/*' -not -path '*/output/*')
+OBJECTS := $(SOURCES:.c=.o)
+DEPENDS := $(SOURCES:.c=.d)
+TARGET ?= main
 
-# Generate each .o file from its respective .c file
-%.o: %.c arithmetics.h
-	$(CC) -c $< $(CFLAGS)
+OBJDIR ?= output
+OBJECTS := $(patsubst %.c,$(OBJDIR)/%.o,$(notdir $(SOURCES)))
 
-# Final executable
-main: $(OBJ)
-	$(CC) -o main $(OBJ)
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS) | $(OBJDIR)
+	$(CC) $(OBJECTS) -o $@ $(LDLIBS)
+
+$(OBJDIR)/%.o: %.c | $(OBJDIR)
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR):
+	mkdir -p $@
 
 clean:
-	rm -rf *.o main
+	rm -rf $(OBJDIR) $(TARGET)
+
+-include $(DEPENDS)
+
+.PHONY: all clean

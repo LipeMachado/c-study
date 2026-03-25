@@ -36,6 +36,7 @@ build/
 Debug/
 Release/
 dist/
+output/
 
 # IDE/Editor (VSCode, Vim, etc.)
 .vscode/
@@ -58,4 +59,3 @@ logs/
 *.hex
 modules.order
 Module.symvers
-
